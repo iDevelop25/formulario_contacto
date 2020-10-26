@@ -17,7 +17,15 @@
             <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo:" value="">
             <textarea name="mensaje" id="mensaje" class="form-control" placeholder="Mensaje..."></textarea>
 
-
+            <?php if (!empty($errores)) : ?>
+                <div class="alert error">
+                    <?php echo $errores; ?>
+                </div>
+            <?php elseif ($enviado) : ?>
+                <div class="alert success">
+                    <p>Enviado Correctamente</p>
+                </div>
+            <?php endif ?>
 
             <input type="submit" name="submit" class="btn btn-primary" value="Enviar correo">
         </form>
